@@ -21,20 +21,28 @@ function getComputerChoice() {
 function playRound(playerChoice, comChoice) {
     console.log(playerChoice + comChoice)
 
-    if (playerChoice === 'rock' && comChoice === 'paper' || playerChoice === 'paper' && comChoice === 'scissors' || playerChoice === 'scissors' && comChoice === 'rock'){
+    if (playerChoice === 'rock' && comChoice === 'paper' || playerChoice === 'paper' && comChoice === 'scissors' || playerChoice === 'scissors' && comChoice === 'rock') {
+        cWins++ ;
+        console.log(cWins, pWins);
         return(`you lose! ${comChoice} beats ${playerChoice}`);
+                
         
     } else if (playerChoice === 'rock' && comChoice === 'scissors' || playerChoice === 'paper' && comChoice === 'rock' || playerChoice === 'scissors' && comChoice === 'paper') {
-        rreturn(`you win! ${playerChoice} beats ${comChoice}`)
+        pWins++ ;
+        console.log(cWins, pWins);
+        return(`you win! ${playerChoice} beats ${comChoice}`);
+        
         
     } else if (playerChoice === comChoice) {
         return(`Tie! you both chose ${playerChoice}`);
     } console.log(cWins, pWins)
 }
-function game() {
-    for (let i = 1; i < 5; i++ )
-        if (i <5) continue;
-            playRound(playerChoice,comChoice);
-        ;
+//create game() function to play 5 rounds and display results of each round and overall winner 
+
+function game(x) {
+    for (let i = 1; i < x; i++ )
+        if (i < x) continue;
+            playRound(playerChoice, comChoice);
+        
 }
-console.log(playRound(playerChoice,comChoice))
+console.log(game(5))
