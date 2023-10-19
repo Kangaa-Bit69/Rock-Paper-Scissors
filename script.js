@@ -1,6 +1,6 @@
 //create variables for user and computer choices
-const playerChoice = prompt('RPS?').toLowerCase();
-const comChoice = getComputerChoice();
+let playerChoice = '';
+let comChoice = '';
 let cWins = 0;
 let pWins = 0;
 //write function that chooses one option at random for the computer
@@ -13,10 +13,11 @@ function getComputerChoice() {
     } else {
         return('scissors');
     }
-    
-} //console.log(playerChoice + comChoice )
-
-
+}
+//prompts player for choice and returns it
+function promptPlayerChoice() {
+    return prompt('Rock, Paper or Scissors?');
+}
 //write function to compare choices
 function playRound(playerChoice, comChoice) {
     console.log(playerChoice + comChoice)
@@ -34,15 +35,20 @@ function playRound(playerChoice, comChoice) {
         
         
     } else if (playerChoice === comChoice) {
+        console.log(cWins, pWins);
         return(`Tie! you both chose ${playerChoice}`);
-    } console.log(cWins, pWins)
+    } 
 }
 //create game() function to play 5 rounds and display results of each round and overall winner 
 
-function game(x) {
-    for (let i = 1; i < x; i++ )
-        if (i < x) continue;
-            playRound(playerChoice, comChoice);
-        
+function game() {
+    for (let i = 0; i < 5; i++){
+        console.log(playRound(promptPlayerChoice(), getComputerChoice()));
+    } if (cWins < pWins) {
+        return (`You win the game! with a score of ${pWins} to ${cWins}`)
+    } else if (pWins < cWins) {
+        return (`You lose the game! with a score of ${pWins} to ${cWins}`)
+    }
 }
-console.log(game(5))
+console.log(game())
+ 
