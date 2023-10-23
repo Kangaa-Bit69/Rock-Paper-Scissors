@@ -1,9 +1,10 @@
-//create variables for user and computer choices
+//variables for user and computer choices
 let playerChoice = '';
 let comChoice = '';
+//variables for scoreboard
 let cWins = 0;
 let pWins = 0;
-//write function that chooses one option at random for the computer
+//function that chooses one option at random for the computer
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3) + 1;
     if (randomNum === 1) {
@@ -18,7 +19,7 @@ function getComputerChoice() {
 function promptPlayerChoice() {
     return prompt('Rock, Paper or Scissors?');
 }
-//write function to compare choices
+//function to compare choices and keep score
 function playRound(playerChoice, comChoice) {
     console.log(playerChoice + comChoice)
 
@@ -41,8 +42,8 @@ function playRound(playerChoice, comChoice) {
 }
 //create game() function to play 5 rounds and display results of each round and overall winner 
 
-function game() {
-    for (let i = 0; i < 5; i++){
+function game(x) {
+    for (let i = 0; i < x; i++){
         console.log(playRound(promptPlayerChoice(), getComputerChoice()));
     } if (cWins < pWins) {
         return (`You win the game! with a score of ${pWins} to ${cWins}`)
@@ -50,5 +51,5 @@ function game() {
         return (`You lose the game! with a score of ${pWins} to ${cWins}`)
     }
 }
-console.log(game())
+console.log(game(prompt('How many rounds would you like to play?')))
  
