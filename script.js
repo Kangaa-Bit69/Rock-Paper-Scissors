@@ -40,7 +40,7 @@ function playRound(playerChoice, comChoice) {
         return(`Tie! you both chose ${playerChoice}`);
     } 
 }
-//create game() function to play 5 rounds and display results of each round and overall winner 
+//create game() function to play x rounds and display results of each round and overall winner 
 
 function game(x) {
     for (let i = 0; i < x; i++){
@@ -51,5 +51,6 @@ function game(x) {
         return (`You lose the game! with a score of ${pWins} to ${cWins}`)
     }
 }
+// call game() function and prompt user for number of rounds 
 console.log(game(prompt('How many rounds would you like to play?')))
  
