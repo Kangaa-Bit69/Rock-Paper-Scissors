@@ -42,7 +42,7 @@ function playRound(playerChoice, comChoice) {
 }
 //create game() function to play x rounds and display results of each round and overall winner 
 
-function game(x) {
+/* function game(x) {
     for (let i = 0; i < x; i++){
         console.log(playRound(promptPlayerChoice(), getComputerChoice()));
     } if (cWins < pWins) {
@@ -50,7 +50,7 @@ function game(x) {
     } else if (pWins < cWins) {
         return (`You lose the game! with a score of ${pWins} to ${cWins}`)
     }
-}
+} */
 // call game() function and prompt user for number of rounds 
-console.log(game(prompt('How many rounds would you like to play?')))
+//console.log(game(prompt('How many rounds would you like to play?')))
  
