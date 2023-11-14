@@ -16,9 +16,9 @@ function getComputerChoice() {
     }
 }
 //prompts player for choice and returns it
-function promptPlayerChoice() {
-    return prompt('Rock, Paper or Scissors?');
-}
+//function promptPlayerChoice() {
+//    return prompt('Rock, Paper or Scissors?');
+//}
 //function to compare choices and keep score
 function playRound(playerChoice, comChoice) {
     console.log(playerChoice + comChoice)
@@ -26,20 +26,27 @@ function playRound(playerChoice, comChoice) {
     if (playerChoice === 'rock' && comChoice === 'paper' || playerChoice === 'paper' && comChoice === 'scissors' || playerChoice === 'scissors' && comChoice === 'rock') {
         cWins++ ;
         console.log(cWins, pWins);
-        return(`you lose! ${comChoice} beats ${playerChoice}`);
+        result.textContent =`you lose! ${comChoice} beats ${playerChoice}`;
                 
         
     } else if (playerChoice === 'rock' && comChoice === 'scissors' || playerChoice === 'paper' && comChoice === 'rock' || playerChoice === 'scissors' && comChoice === 'paper') {
         pWins++ ;
         console.log(cWins, pWins);
-        return(`you win! ${playerChoice} beats ${comChoice}`);
+        result.textContent =`you win! ${playerChoice} beats ${comChoice}`;
         
         
     } else if (playerChoice === comChoice) {
         console.log(cWins, pWins);
-        return(`Tie! you both chose ${playerChoice}`);
+        result.textContent =`Tie! you both chose ${playerChoice}`;
     } 
 }
+
+//display results in div
+ const result = document.querySelector('.result');
+ const body = document.querySelector('body');
+ result.classList.add('result');
+ body.appendChild(result);
+ console.log(result);
 //create game() function to play x rounds and display results of each round and overall winner 
 
 /* function game(x) {
