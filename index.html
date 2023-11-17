@@ -2,9 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="rpsStyle.css"> 
     <title>title</title>
 </head>
 <body>
-<script src="script.js"></script>
+    <button onclick= "playRound('rock',getComputerChoice())">Rock</button>
+    <button onclick= "playRound('paper',getComputerChoice())">Paper</button>
+    <button onclick= "playRound('scissors',getComputerChoice())">Scissors</button>
+    <div class="result"> 
+        
+    </div>
+    
+    
 </body>
 </html>
