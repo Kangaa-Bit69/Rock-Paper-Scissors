@@ -22,7 +22,7 @@ function getComputerChoice() {
 //}
 //function to compare choices and keep score
 function playRound(playerChoice, comChoice) {
-   if (cWins < 5 && pWins < 5) { 
+if (cWins < 5 && pWins < 5) { 
     console.log(playerChoice + comChoice)
 
     if (playerChoice === 'rock' && comChoice === 'paper' || playerChoice === 'paper' && comChoice === 'scissors' || playerChoice === 'scissors' && comChoice === 'rock') {
